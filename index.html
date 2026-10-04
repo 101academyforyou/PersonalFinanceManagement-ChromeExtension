@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finny 記帳｜可愛又聰明的 Chrome 記帳小幫手</title>
+  <meta name="description" content="Finny 記帳是一款可愛 × 科技 × 簡潔的 Chrome 擴充功能。點一下工具列就能記收入與支出，查看餘額、搜尋與篩選紀錄，資料只存在你的瀏覽器。" />
+  <meta property="og:title" content="Finny 記帳｜可愛又聰明的 Chrome 記帳小幫手" />
+  <meta property="og:description" content="點一下工具列就能記帳。資料只存在你的瀏覽器，免註冊、免費、開源。" />
+  <meta property="og:image" content="site/screens/dashboard.png" />
+  <meta name="theme-color" content="#6C8CFF" />
+  <link rel="icon" type="image/png" href="assets/icons/icon32.png" />
+  <link rel="stylesheet" href="site/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <img src="assets/mascot/finny.svg" alt="" width="32" height="32" />
+        <span>Finny 記帳</span>
+      </a>
+      <nav class="nav-links" aria-label="主要導覽">
+        <a href="#features">功能</a>
+        <a href="#demo">線上試玩</a>
+        <a href="#install">安裝</a>
+        <a href="#faq">常見問題</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="https://github.com/101academyforyou/PersonalFinanceManagement-ChromeExtension/archive/refs/heads/main.zip">免費下載</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="pill">🤖 Chrome 擴充功能 · 免費開源</span>
+          <h1>記帳，<br /><span class="gradient-text">也可以很可愛。</span></h1>
+          <p class="lead">
+            Finny 記帳住在你的 Chrome 工具列。點一下就能記下收入和支出，
+            馬上看到餘額與本月花費。可愛的 AI 小助手 Finny 會陪你養成每天記帳的習慣。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://github.com/101academyforyou/PersonalFinanceManagement-ChromeExtension/archive/refs/heads/main.zip">
+              ⬇️ 下載擴充功能
+            </a>
+            <a class="btn btn-ghost" href="#demo">▶ 線上試玩</a>
+          </div>
+          <ul class="hero-facts">
+            <li><strong>3 秒</strong>記完一筆</li>
+            <li><strong>0</strong>帳號註冊</li>
+            <li><strong>100%</strong>資料留在本機</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="blob blob-a"></div>
+          <div class="blob blob-b"></div>
+          <img class="hero-shot" src="site/screens/dashboard.png" alt="" width="360" height="580" />
+          <div class="float-card float-income">
+            <span>💼</span>
+            <div><small>薪資</small><b>+$52,000</b></div>
+          </div>
+          <div class="float-card float-expense">
+            <span>🍱</span>
+            <div><small>午餐</small><b>-$280</b></div>
+          </div>
+          <img class="hero-finny" src="assets/mascot/finny.svg" alt="" width="96" height="96" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">功能</span>
+          <h2>記帳需要的，剛剛好都在這裡</h2>
+          <p>不用打開 App、不用登入，在瀏覽網頁的同時就能完成。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon" style="--c: var(--primary)">📊</div>
+            <h3>一眼看懂的總覽</h3>
+            <p>目前餘額、本月收入、本月支出和最近交易，打開就看得到。</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" style="--c: var(--income)">⚡</div>
+            <h3>3 秒快速記帳</h3>
+            <p>選收入或支出、輸入金額、點一下分類圖示就完成，日期自動帶入今天。</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" style="--c: var(--purple)">🔍</div>
+            <h3>搜尋與篩選</h3>
+            <p>用關鍵字找交易，或依類型、分類、月份篩選，自動算出小計。</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" style="--c: var(--pink)">✏️</div>
+            <h3>隨時編輯、刪除</h3>
+            <p>記錯了也沒關係，每筆紀錄都能修改，刪除前還會再確認一次。</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" style="--c: var(--expense)">🤖</div>
+            <h3>Finny 小助手</h3>
+            <p>根據你的收支狀況給提醒：該記帳了、花太多了、哪個分類花最多。</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" style="--c: var(--income)">🔒</div>
+            <h3>隱私優先</h3>
+            <p>所有資料只存在你的瀏覽器，沒有伺服器、沒有追蹤、不需要帳號。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screens -->
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">介面</span>
+          <h2>圓角、柔和、剛好 360px</h2>
+          <p>專為 Chrome Popup 設計，沒有多餘的東西，資訊清楚好操作。</p>
+        </div>
+        <div class="screens">
+          <figure>
+            <img src="site/screens/dashboard.png" alt="總覽畫面：目前餘額、本月收入與支出、最近交易" width="360" height="580" loading="lazy" />
+            <figcaption><b>總覽</b>餘額與本月收支一目了然</figcaption>
+          </figure>
+          <figure>
+            <img src="site/screens/form.png" alt="記帳畫面：類型、金額、分類圖示、說明與日期" width="360" height="580" loading="lazy" />
+            <figcaption><b>記帳</b>點選分類圖示，快速記下一筆</figcaption>
+          </figure>
+          <figure>
+            <img src="site/screens/list.png" alt="紀錄畫面：搜尋、篩選、編輯與刪除交易" width="360" height="580" loading="lazy" />
+            <figcaption><b>紀錄</b>搜尋、篩選、編輯、刪除</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finny -->
+    <section class="section">
+      <div class="container finny-section">
+        <div class="finny-visual">
+          <img src="assets/mascot/finny.svg" alt="Finny 吉祥物" width="200" height="200" />
+        </div>
+        <div>
+          <span class="eyebrow">認識 Finny</span>
+          <h2>你的口袋財務小助手</h2>
+          <p class="muted">Finny 會看看你的帳本，用一句話告訴你現在的狀況。不說教，只是溫柔提醒。</p>
+          <ul class="chat">
+            <li>今天還沒記帳喔～花一分鐘記一下吧 ✍️</li>
+            <li>本月花最多的是「飲食」，共 $4,280 👀</li>
+            <li>本月已花掉八成收入，要踩一下煞車囉 🚦</li>
+            <li>今天也有好好記帳，超棒的！✨</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live demo -->
+    <section class="section section-tint" id="demo">
+      <div class="container demo">
+        <div class="demo-copy">
+          <span class="eyebrow">線上試玩</span>
+          <h2>不用安裝，現在就試試看</h2>
+          <p class="muted">
+            右邊就是真正的擴充功能畫面。試玩的資料只會存在這個網頁的瀏覽器空間，
+            不會上傳到任何地方。
+          </p>
+          <div class="demo-actions">
+            <button class="btn btn-primary" id="loadDemo" type="button">✨ 載入範例資料</button>
+            <button class="btn btn-ghost" id="clearDemo" type="button">🧹 清空重來</button>
+          </div>
+          <p class="demo-status" id="demoStatus" role="status" aria-live="polite"></p>
+        </div>
+        <div class="demo-frame-wrap" id="demoWrap">
+          <div class="demo-frame">
+            <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span>Finny 記帳</span></div>
+            <iframe id="demoFrame" src="popup.html" title="Finny 記帳線上試玩" width="360" height="580"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section class="section" id="install">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">安裝</span>
+          <h2>4 個步驟開始記帳</h2>
+          <p>目前以開發人員模式安裝，大約一分鐘就能完成。</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <h3>下載並解壓縮</h3>
+            <p><a href="https://github.com/101academyforyou/PersonalFinanceManagement-ChromeExtension/archive/refs/heads/main.zip">下載 ZIP 檔</a>，解壓縮到任一資料夾。</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <h3>打開擴充功能頁</h3>
+            <p>在 Chrome 網址列輸入 <code>chrome://extensions</code>。</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <h3>開啟開發人員模式</h3>
+            <p>打開右上角的「開發人員模式」開關。</p>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <h3>載入擴充功能</h3>
+            <p>點「載入未封裝項目」，選剛剛解壓縮的資料夾，再把 Finny 釘選到工具列。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-tint" id="faq">
+      <div class="container narrow">
+        <div class="section-head">
+          <span class="eyebrow">常見問題</span>
+          <h2>你可能想知道</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>需要付費或註冊帳號嗎？</summary>
+            <p>完全免費，也不需要註冊。安裝好就能直接開始記帳。</p>
+          </details>
+          <details>
+            <summary>我的記帳資料存在哪裡？</summary>
+            <p>資料存在 Chrome 的 <code>chrome.storage.local</code>，也就是你自己的電腦裡。Finny 記帳沒有後端伺服器，不會上傳任何資料。</p>
+          </details>
+          <details>
+            <summary>擴充功能需要哪些權限？</summary>
+            <p>只需要 <code>storage</code> 一個權限，用來保存你的交易紀錄。它不會讀取你瀏覽的網頁內容。</p>
+          </details>
+          <details>
+            <summary>移除擴充功能後資料會怎樣？</summary>
+            <p>移除擴充功能時，Chrome 會一併刪除它保存的資料，請在移除前確認不再需要這些紀錄。</p>
+          </details>
+          <details>
+            <summary>可以在其他瀏覽器使用嗎？</summary>
+            <p>Finny 記帳使用 Manifest V3 開發，Microsoft Edge、Brave 等以 Chromium 為基礎的瀏覽器也能以相同方式安裝。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <img src="assets/mascot/finny.svg" alt="" width="80" height="80" />
+          <h2>今天就開始和 Finny 一起記帳吧！</h2>
+          <p>可愛、簡單、資料只屬於你。</p>
+          <div class="hero-actions center">
+            <a class="btn btn-light" href="https://github.com/101academyforyou/PersonalFinanceManagement-ChromeExtension/archive/refs/heads/main.zip">⬇️ 免費下載</a>
+            <a class="btn btn-outline-light" href="https://github.com/101academyforyou/PersonalFinanceManagement-ChromeExtension">查看原始碼</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="brand small"><img src="assets/mascot/finny.svg" alt="" width="24" height="24" />Finny 記帳</span>
+      <span class="muted">HTML · CSS · JavaScript · Manifest V3</span>
+      <a href="https://github.com/101academyforyou/PersonalFinanceManagement-ChromeExtension">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="site/demo-data.js"></script>
+  <script src="site/main.js"></script>
+</body>
+</html>

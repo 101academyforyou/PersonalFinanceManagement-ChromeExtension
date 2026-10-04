@@ -2,6 +2,8 @@
 
 可愛 × 科技 × 簡潔的個人記帳 Chrome Extension，陪你記帳的是 AI 財務小助手 **Finny 🤖**。
 
+🌐 介紹網頁：https://101academyforyou.github.io/PersonalFinanceManagement-ChromeExtension/
+
 ## 功能
 
 - **總覽**：目前餘額、本月收入、本月支出、最近 5 筆交易
