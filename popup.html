@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finny 記帳</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Finny 助手 -->
+    <header class="hero">
+      <img class="finny" src="assets/mascot/finny.svg" alt="Finny" width="52" height="52" />
+      <div class="bubble" id="finnyMessage" aria-live="polite">嗨！我是 Finny 🤖</div>
+    </header>
+
+    <!-- 分頁 -->
+    <nav class="tabs" role="tablist">
+      <button class="tab is-active" role="tab" data-view="dashboard" aria-selected="true">
+        <span aria-hidden="true">📊</span>總覽
+      </button>
+      <button class="tab" role="tab" data-view="form" aria-selected="false">
+        <span aria-hidden="true">✏️</span>記帳
+      </button>
+      <button class="tab" role="tab" data-view="list" aria-selected="false">
+        <span aria-hidden="true">📋</span>紀錄
+      </button>
+      <span class="tab-indicator" aria-hidden="true"></span>
+    </nav>
+
+    <main class="views">
+      <!-- 總覽 -->
+      <section class="view is-active" id="view-dashboard" role="tabpanel">
+        <div class="balance-card">
+          <div class="balance-label">目前餘額</div>
+          <div class="balance-amount" id="balanceAmount">$0</div>
+          <div class="balance-sub" id="balanceSub">總收入 $0 · 總支出 $0</div>
+          <div class="balance-glow" aria-hidden="true"></div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-card income">
+            <div class="stat-icon" aria-hidden="true">💰</div>
+            <div>
+              <div class="stat-label">本月收入</div>
+              <div class="stat-value" id="monthIncome">$0</div>
+            </div>
+          </div>
+          <div class="stat-card expense">
+            <div class="stat-icon" aria-hidden="true">🧾</div>
+            <div>
+              <div class="stat-label">本月支出</div>
+              <div class="stat-value" id="monthExpense">$0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <h2>最近交易</h2>
+          <button class="link-btn" data-goto="list">查看全部 ›</button>
+        </div>
+        <ul class="tx-list" id="recentList"></ul>
+      </section>
+
+      <!-- 記帳 / 編輯 -->
+      <section class="view" id="view-form" role="tabpanel">
+        <form id="txForm" class="card form" novalidate>
+          <div class="form-title">
+            <h2 id="formTitle">新增一筆</h2>
+            <span class="tx-id-badge" id="formIdBadge" hidden></span>
+          </div>
+
+          <div class="type-toggle" role="radiogroup" aria-label="類型">
+            <label class="type-option expense">
+              <input type="radio" name="type" value="expense" checked />
+              <span>🧾 支出</span>
+            </label>
+            <label class="type-option income">
+              <input type="radio" name="type" value="income" />
+              <span>💰 收入</span>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field-label">金額</span>
+            <div class="amount-input">
+              <span class="currency" aria-hidden="true">$</span>
+              <input type="text" inputmode="decimal" name="amount" placeholder="0" autocomplete="off" />
+            </div>
+            <span class="field-error" data-error="amount"></span>
+          </label>
+
+          <div class="field">
+            <span class="field-label">分類</span>
+            <div class="category-grid" id="categoryGrid" role="radiogroup" aria-label="分類"></div>
+            <span class="field-error" data-error="category"></span>
+          </div>
+
+          <label class="field">
+            <span class="field-label">說明</span>
+            <input type="text" name="description" maxlength="50" placeholder="例如：午餐" autocomplete="off" />
+            <span class="field-error" data-error="description"></span>
+          </label>
+
+          <label class="field">
+            <span class="field-label">日期</span>
+            <input type="date" name="date" />
+            <span class="field-error" data-error="date"></span>
+          </label>
+
+          <div class="form-actions">
+            <button type="button" class="btn ghost" id="cancelEdit" hidden>取消</button>
+            <button type="submit" class="btn primary" id="submitBtn">記下來 ✨</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- 紀錄 -->
+      <section class="view" id="view-list" role="tabpanel">
+        <div class="search-box">
+          <span aria-hidden="true">🔍</span>
+          <input type="search" id="searchInput" placeholder="搜尋說明、分類、金額…" autocomplete="off" />
+        </div>
+
+        <div class="filters">
+          <select id="filterType" aria-label="類型篩選">
+            <option value="all">全部類型</option>
+            <option value="expense">支出</option>
+            <option value="income">收入</option>
+          </select>
+          <select id="filterCategory" aria-label="分類篩選">
+            <option value="all">全部分類</option>
+          </select>
+          <input type="month" id="filterMonth" aria-label="月份篩選" />
+          <button type="button" class="btn ghost small" id="clearFilters">清除篩選</button>
+        </div>
+
+        <div class="list-summary" id="listSummary"></div>
+        <ul class="tx-list" id="allList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- 刪除確認 -->
+  <div class="modal" id="confirmModal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <img src="assets/mascot/finny.svg" alt="" width="48" height="48" />
+      <h3 id="confirmTitle">確定要刪除嗎？</h3>
+      <p id="confirmText"></p>
+      <div class="form-actions">
+        <button class="btn ghost" id="confirmCancel">先不要</button>
+        <button class="btn danger" id="confirmOk">刪除</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

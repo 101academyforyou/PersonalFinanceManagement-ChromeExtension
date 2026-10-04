@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Finny 記帳｜個人財務管理",
+  "short_name": "Finny 記帳",
+  "version": "1.0.0",
+  "description": "可愛 × 科技 × 簡潔的個人記帳工具，與 AI 財務助手 Finny 一起輕鬆管理收支。",
+  "action": {
+    "default_title": "Finny 記帳",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": ["storage"]
+}

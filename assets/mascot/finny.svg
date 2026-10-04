@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Finny 財務小助手">
+  <defs>
+    <linearGradient id="fBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8FA6FF"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="fFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2B2F55"/>
+      <stop offset="1" stop-color="#3A3F73"/>
+    </linearGradient>
+  </defs>
+  <!-- antenna -->
+  <line x1="64" y1="22" x2="64" y2="10" stroke="#6C8CFF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="64" cy="9" r="6" fill="#FF8FB1"/>
+  <circle cx="62" cy="7" r="2" fill="#FFFFFF" opacity=".8"/>
+  <!-- ears -->
+  <rect x="12" y="52" width="12" height="26" rx="6" fill="#6C8CFF"/>
+  <rect x="104" y="52" width="12" height="26" rx="6" fill="#6C8CFF"/>
+  <!-- head -->
+  <rect x="20" y="22" width="88" height="84" rx="30" fill="url(#fBody)"/>
+  <!-- face screen -->
+  <rect x="30" y="36" width="68" height="50" rx="20" fill="url(#fFace)"/>
+  <!-- eyes -->
+  <ellipse cx="50" cy="58" rx="7" ry="9" fill="#7CF0FF"/>
+  <ellipse cx="78" cy="58" rx="7" ry="9" fill="#7CF0FF"/>
+  <circle cx="52" cy="55" r="2.5" fill="#FFFFFF"/>
+  <circle cx="80" cy="55" r="2.5" fill="#FFFFFF"/>
+  <!-- smile -->
+  <path d="M55 72 Q64 80 73 72" fill="none" stroke="#7CF0FF" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- cheeks -->
+  <ellipse cx="40" cy="74" rx="6" ry="3.5" fill="#FF8FB1" opacity=".85"/>
+  <ellipse cx="88" cy="74" rx="6" ry="3.5" fill="#FF8FB1" opacity=".85"/>
+  <!-- coin badge -->
+  <circle cx="96" cy="100" r="16" fill="#FFD66B" stroke="#FFFFFF" stroke-width="4"/>
+  <text x="96" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="17" fill="#B7791F">$</text>
+</svg>
